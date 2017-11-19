@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -12,7 +13,12 @@ public class MainActivity extends AppCompatActivity {
     TextView tv;
 
     @Inject
-    Cloth cloth;
+    @Named("red")
+    Cloth redCloth;
+
+    @Inject
+    @Named("blue")
+    Cloth blueCloth;
 
 
     @Inject
@@ -32,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         MainComponent build = DaggerMainComponent.builder().mainModule(new MainModule()).build();
         build.inject(this);
 
-        tv.setText("我现在有" + cloth + ", "+shoe + ", "+clothes);
-
+//        tv.setText("我现在有" + cloth + ", "+shoe + ", "+clothes);
+        tv.setText(redCloth + ", " + blueCloth);
     }
 }
