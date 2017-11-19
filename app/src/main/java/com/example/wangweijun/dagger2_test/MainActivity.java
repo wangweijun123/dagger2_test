@@ -13,6 +13,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Inject
     Cloth cloth;
+
+
+    @Inject
+    Shoe shoe;
+
+    @Inject
+    Clothes clothes;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         MainComponent build = DaggerMainComponent.builder().mainModule(new MainModule()).build();
         build.inject(this);
 
-        tv.setText("我现在有" + cloth);
+        tv.setText("我现在有" + cloth + ", "+shoe + ", "+clothes);
 
     }
 }
