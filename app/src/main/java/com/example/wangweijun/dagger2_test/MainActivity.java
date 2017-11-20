@@ -28,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     Clothes clothes;
 
+    @Inject
+    Father father;
+
+    @Inject
+    Child child;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,5 +49,9 @@ public class MainActivity extends AppCompatActivity {
         Log.i("wang", "shoe:" + shoe);
         Log.i("wang", "clothes:" + clothes + ", clothes.getCloth() : " + clothes.getCloth()
         +", "+clothes.getCloth().getColor());
+
+        Log.i("wang", "####################");
+        Log.i("wang", "father:"+father);
+        Log.i("wang", "child.getFather():"+child.getFather());
     }
 }

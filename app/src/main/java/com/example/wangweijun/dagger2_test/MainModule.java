@@ -1,6 +1,7 @@
 package com.example.wangweijun.dagger2_test;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -41,6 +42,26 @@ public class MainModule {
     @Provides
     public Clothes getClothes(@RedCloth Cloth cloth){
         return new Clothes(cloth);
+    }
+
+    /**
+     * 生产一个child对象
+     * @param father
+     * @return
+     */
+    @Provides
+    public Child createChild(Father father) {
+        return  new Child(father);
+    }
+
+    /**
+     * 生产father对象，工厂方法中有生成单例对象，组件也必须是单利
+     * @return
+     */
+    @Singleton
+    @Provides
+    public Father createFather() {
+        return  new Father();
     }
 
 }
