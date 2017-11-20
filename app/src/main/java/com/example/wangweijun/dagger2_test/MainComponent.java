@@ -1,7 +1,5 @@
 package com.example.wangweijun.dagger2_test;
 
-import javax.inject.Singleton;
-
 import dagger.Component;
 
 /**
@@ -10,7 +8,8 @@ import dagger.Component;
  *
  */
 
-@Singleton
+//@Singleton
+@PerActivity // 与@Singleton 等价
 @Component(modules = MainModule.class)
 public interface MainComponent {
 
