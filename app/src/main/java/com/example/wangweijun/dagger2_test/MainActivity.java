@@ -1,8 +1,10 @@
 package com.example.wangweijun.dagger2_test;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import javax.inject.Inject;
@@ -34,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     Child child;
 
+    @Inject
+    ClothHandler clothHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
         tv = (TextView) findViewById(R.id.tv);
 
-        MainComponent build = DaggerMainComponent.builder().mainModule(new MainModule()).build();
+        MainComponent build = DaggerMainComponent.builder()
+                .baseComponent(((MyApp)getApplication()).getBaseComponent())
+                .mainModule(new MainModule()).build();
         build.inject(this);
 
         Log.i("wang", "redCloth:" + redCloth + ", "+redCloth.getColor());
@@ -53,5 +60,14 @@ public class MainActivity extends AppCompatActivity {
         Log.i("wang", "####################");
         Log.i("wang", "father:"+father);
         Log.i("wang", "child.getFather():"+child.getFather());
+
+        Log.i("wang", "####################");
+
+
+        Log.i("wang", "clothHandler:"+clothHandler);
+    }
+
+    public void startSecondActivity(View v) {
+        startActivity(new Intent(getApplicationContext(), SecondActivity.class));
     }
 }

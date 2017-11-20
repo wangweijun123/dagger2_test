@@ -10,7 +10,7 @@ import dagger.Component;
 
 //@Singleton
 @PerActivity // 与@Singleton 等价
-@Component(modules = MainModule.class)
+@Component(modules = MainModule.class, dependencies = BaseComponent.class)
 public interface MainComponent {
 
     void inject(MainActivity mainActivity);
