@@ -15,9 +15,4 @@ public class Clothes {
     public Cloth getCloth() {
         return cloth;
     }
-
-    @Override
-    public String toString() {
-        return cloth.getColor() + "衣服";
-    }
 }

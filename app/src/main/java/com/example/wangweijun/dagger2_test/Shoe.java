@@ -12,9 +12,4 @@ public class Shoe {
     public Shoe() {
     }
 
-    @Override
-    public String toString() {
-        return "鞋子";
-    }
-
 }
