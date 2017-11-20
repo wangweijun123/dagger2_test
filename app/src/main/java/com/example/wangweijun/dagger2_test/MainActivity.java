@@ -14,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tv;
 
     @Inject
-    @Named("red")
+//    @Named("red")
+    @RedCloth
     Cloth redCloth;
 
     @Inject

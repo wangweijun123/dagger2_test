@@ -16,7 +16,8 @@ import dagger.Provides;
 public class MainModule {
 
     @Provides
-    @Named("red")
+//    @Named("red")
+    @RedCloth   //   @Named("red") 等价于 @RedCloth
     public Cloth getRedCloth() {
         Cloth cloth = new Cloth();
         cloth.setColor("红色");
@@ -32,8 +33,13 @@ public class MainModule {
     }
 
 
+//    @Provides
+//    public Clothes getClothes(@Named("blue") Cloth cloth){
+//        return new Clothes(cloth);
+//    }
+
     @Provides
-    public Clothes getClothes(@Named("blue") Cloth cloth){
+    public Clothes getClothes(@RedCloth Cloth cloth){
         return new Clothes(cloth);
     }
 
