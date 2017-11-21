@@ -46,10 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
         tv = (TextView) findViewById(R.id.tv);
 
-        MainComponent build = DaggerMainComponent.builder()
-                .baseComponent(((MyApp)getApplication()).getBaseComponent())
-                .mainModule(new MainModule()).build();
-        build.inject(this);
+//        MainComponent build = DaggerMainComponent.builder()
+//                .baseComponent(((MyApp)getApplication()).getBaseComponent())
+//                .mainModule(new MainModule()).build();
+//        build.inject(this);
+
+        MyApp application = (MyApp) getApplication();
+        application.getBaseComponent().getSubMainComponent(new MainModule()).inject(this);
 
         Log.i("wang", "redCloth:" + redCloth + ", "+redCloth.getColor());
         Log.i("wang", "blueCloth:" + blueCloth + ", " + blueCloth.getColor());
@@ -65,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         Log.i("wang", "clothHandler:"+clothHandler);
+
+
+        Clothes clothes = clothHandler.handle(redCloth);
+
+        Log.i("wang", "clothes:"+clothes);
     }
 
     public void startSecondActivity(View v) {
