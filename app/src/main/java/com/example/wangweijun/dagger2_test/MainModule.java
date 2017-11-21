@@ -1,5 +1,7 @@
 package com.example.wangweijun.dagger2_test;
 
+import android.util.Log;
+
 import javax.inject.Named;
 
 import dagger.Module;
@@ -19,6 +21,7 @@ public class MainModule {
 //    @Named("red")
     @RedCloth   //   @Named("red") 等价于 @RedCloth
     public Cloth getRedCloth() {
+        Log.i("wang", "getRedCloth...");
         Cloth cloth = new Cloth();
         cloth.setColor("红色");
         return cloth;
@@ -27,6 +30,7 @@ public class MainModule {
     @Provides
     @Named("blue")
     public Cloth getBlueCloth() {
+        Log.i("wang", "getBlueCloth...");
         Cloth cloth = new Cloth();
         cloth.setColor("蓝色");
         return cloth;
@@ -40,6 +44,7 @@ public class MainModule {
 
     @Provides
     public Clothes getClothes(@RedCloth Cloth cloth){
+        Log.i("wang", "getClothes...");
         return new Clothes(cloth);
     }
 
@@ -50,6 +55,7 @@ public class MainModule {
      */
     @Provides
     public Child createChild(Father father) {
+        Log.i("wang", "createChild...");
         return  new Child(father);
     }
 
@@ -61,6 +67,7 @@ public class MainModule {
     @PerActivity
     @Provides
     public Father createFather() {
+        Log.i("wang", "createFather...");
         return  new Father();
     }
 

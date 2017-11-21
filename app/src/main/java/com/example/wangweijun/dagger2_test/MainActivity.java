@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         MyApp application = (MyApp) getApplication();
         application.getBaseComponent().getSubMainComponent(new MainModule()).inject(this);
 
+        Log.i("wang", "inject finised");
+
         Log.i("wang", "redCloth:" + redCloth + ", "+redCloth.getColor());
         Log.i("wang", "blueCloth:" + blueCloth + ", " + blueCloth.getColor());
         Log.i("wang", "shoe:" + shoe);
