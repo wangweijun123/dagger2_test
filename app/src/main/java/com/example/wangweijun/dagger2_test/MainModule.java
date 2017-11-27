@@ -63,6 +63,7 @@ public class MainModule {
      * 生产father对象，工厂方法中有生成单例对象，组件也必须是单利
      * @return
      */
+    // 一定要注意，单例的定义是在同一个组件实例才有效
 //    @Singleton
     @PerActivity
     @Provides

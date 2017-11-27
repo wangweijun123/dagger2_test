@@ -16,6 +16,17 @@ public class SecondActivity extends Activity{
     @Inject
     ClothHandler clothHandler;
 
+    @Inject
+    Wood wood;
+    @Inject
+    Desk desk;
+
+    @Inject
+    Water water;
+
+    @Inject
+    Water water2;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +40,13 @@ public class SecondActivity extends Activity{
 
 
         Log.i("wang", "clothHandler:"+clothHandler);
+        Log.i("wang", "wood:"+wood);
+
+        Log.i("wang", "desk:"+desk + ", desk.wood:"+desk.wood);
+
+        Log.i("wang", "water:"+water);
+
+        Log.i("wang", "water2:"+water2);
 
     }
 }

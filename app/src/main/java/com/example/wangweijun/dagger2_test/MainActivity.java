@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     ClothHandler clothHandler;
 
+    @Inject
+    Water water;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
         Clothes clothes = clothHandler.handle(redCloth);
 
         Log.i("wang", "clothes:"+clothes);
+
+        Log.i("wang", "water:"+water);
     }
 
     public void startSecondActivity(View v) {
