@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.wangweijun.dagger2_test.custom.MyBaseActivity;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -83,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startSecondActivity(View v) {
-        startActivity(new Intent(getApplicationContext(), SecondActivity.class));
+//        startActivity(new Intent(getApplicationContext(), SecondActivity.class));
+        startActivity(new Intent(getApplicationContext(), MyBaseActivity.class));
+
+
     }
 }
