@@ -32,3 +32,9 @@ dagger 2 依赖注入对象，你只需要声明引用，告诉dagger2怎么生�
 单例是指在同一个component实例下才生效
 
 单例是在同一个Component实例提供依赖的前提下才有效的
+
+subcomponent 父组件一定声明自己能生成什么样的实例，不能看module，
+scope和module类provide方法或者类的构造函数一样
+
+
+

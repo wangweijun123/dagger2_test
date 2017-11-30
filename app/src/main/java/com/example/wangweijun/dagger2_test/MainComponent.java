@@ -9,7 +9,7 @@ import dagger.Component;
  */
 
 //@Singleton
-@PerActivity // 与@Singleton 等价
+@PerActivity // 与@Singleton 等价, 组件与module类关联，组件与组件关联
 @Component(modules = MainModule.class, dependencies = BaseComponent.class)
 public interface MainComponent {
 
