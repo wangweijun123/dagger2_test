@@ -20,11 +20,13 @@ public interface BaseComponent {
 
     //这个是为第二个Activity准备的,也就是dependencies依赖声明的方式
     // 告诉依赖组件，我能提供ClothHandler实例，而且是单例的
+    // 如果没有这个方法,BaseComponent就不能提供ClothHandler对象
     ClothHandler getClothHandler();
 
 
     //@Subcomponent使用的声明方式,声明一个返回值为子组件的方法,
     // 子组件需要什么Module,就在方法参数中添加什么,暴露子组件接口
     // 返回组件的一定是subcomponent子组件定义
+
     SubMainComponent getSubMainComponent(MainModule module);
 }
