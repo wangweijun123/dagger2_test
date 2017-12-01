@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     Water water;
 
+    @Inject
+    ModelStr modelStr;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
         Log.i("wang", "clothes:"+clothes);
 
         Log.i("wang", "water:"+water);
+
+        Log.i("wang", "modelStr:"+modelStr);
+
     }
 
     public void startSecondActivity(View v) {
